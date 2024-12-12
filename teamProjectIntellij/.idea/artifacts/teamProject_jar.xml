@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="teamProject:jar">
+    <output-path>$USER_HOME$/Desktop/team prject java</output-path>
+    <root id="archive" name="teamProject.jar">
+      <element id="module-output" name="teamProject" />
+    </root>
+  </artifact>
+</component>
