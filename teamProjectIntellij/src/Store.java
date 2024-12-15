@@ -36,6 +36,22 @@ public class Store {
 
     }
 
+    public String getEmptyrooms(){
+        String countStr = "";
+        if(!isEmpty()){
+            Room emptyRoom = rooms[0];
+            for(int i = 1;i < total;i++){
+                if(rooms[i].getWhetherRoomOccupied() == false){
+                    countStr += rooms[i] + "\n";
+                }
+            }
+        }
+        if(countStr == ""){
+            return "No room available.";
+        }
+        else {return countStr;}
+    }
+
     public String getListRooms(){
         return listRooms();
     }
