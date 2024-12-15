@@ -30,6 +30,20 @@ public class Driver {
             System.out.println("No Product Added");
         }
     }
+    //void printEmptyRoom(){
+    //    store.getEmptyRoom();
+    //}
+
+    private void roomOrder(){
+        System.out.println("How many rooms would you like to have in your store?");
+        int numberRooms = input.nextInt();
+
+        store = new Store(numberRooms);
+
+        for(int i = 1;i < numberRooms;i++){
+          addRoom();
+        }
+    }
 
 }
 //Test
