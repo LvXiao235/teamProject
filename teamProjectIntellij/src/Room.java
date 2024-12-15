@@ -22,4 +22,8 @@ public class Room {
     public boolean getWhetherRoomOccupied() {
         return whetherRoomOcc;
     }
+
+    public void checkIn(boolean whetherRoomOcc){
+        this.whetherRoomOcc=whetherRoomOcc;
+    }
 }

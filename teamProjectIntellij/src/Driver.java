@@ -6,10 +6,52 @@ public class Driver {
     private Store store;
 
     public static void main(String[] args) {
-        Driver driver = new Driver();
-        driver.howManyRooms();
+        /*Driver driver = */new Driver();
+        /*driver.howManyRooms();
         driver.printRooms();
-        driver.ListEmptyRooms();
+        driver.ListEmptyRooms();*/
+    }
+
+    public Driver(){
+        howManyRooms();
+        runMenu();
+    }
+
+    //Menu part 1, print menu and get the number user press
+    private int getMenuNumber(){
+        System.out.println("Main Menu" +
+                "\n-------------" +
+                "\n1) Set rooms" +
+                "\n2) Customer check in/out" +
+                "\n3) Search for empty room" +
+                "\n4) Print room information" +
+                "\n0) Exit"
+        );
+        int userPress = input.nextInt();
+        return userPress;
+
+    }
+
+    private void runMenu(){
+        int userPress = getMenuNumber();
+        if (userPress != 0){
+            switch (userPress){
+                case 1 -> addRoom();
+                case 2 -> changeRoomInformation();
+                case 3 -> ListEmptyRooms();
+                case 4 -> printRooms();
+                default -> System.out.println("Invalid option entered: " + userPress);
+            }
+
+            System.out.println("\n Press enter key to continue");
+            input.nextLine();
+            input.nextLine();
+
+            userPress = getMenuNumber();
+
+            System.out.println("exit now");
+            System.exit(0);
+        }
     }
 
     private void addRoom() {
@@ -30,9 +72,7 @@ public class Driver {
             System.out.println("No Product Added");
         }
     }
-    //void printEmptyRoom(){
-    //    store.getEmptyRoom();
-    //}
+
 
     void printRooms(){
         System.out.println("List of rooms are: ");
@@ -54,5 +94,21 @@ public class Driver {
         System.out.println("Looking for empty rooms...");
         System.out.println(store.getEmptyrooms());
     }
+
+    //Enable user to check somebody in//  Doesn't work. It will exit if you press 2
+    void changeRoomInformation(){
+        System.out.println("rOOM xuhao");
+        int i = input.nextInt();
+        System.out.println("now");
+         char nowWhether =input.next().charAt(0);
+        boolean now = false;
+        if((nowWhether == 'y')||(nowWhether == 'Y')){
+            now = true;
+        }
+        store.checkInOut(i,now);
+
+    }
+
+
 }
 //Test

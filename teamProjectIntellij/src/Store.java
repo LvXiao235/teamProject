@@ -40,7 +40,7 @@ public class Store {
         String countStr = "";
         if(!isEmpty()){
             Room emptyRoom = rooms[0];
-            for(int i = 1;i < total;i++){
+            for(int i = 0;i < total;i++){
                 if(rooms[i].getWhetherRoomOccupied() == false){
                     countStr += rooms[i] + "\n";
                 }
@@ -54,5 +54,10 @@ public class Store {
 
     public String getListRooms(){
         return listRooms();
+    }
+
+    public void checkInOut(int i,boolean now){
+        boolean newSituation = now;
+        rooms[i].checkIn(newSituation);
     }
 }
