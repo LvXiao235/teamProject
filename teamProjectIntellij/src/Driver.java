@@ -31,10 +31,10 @@ public class Driver {
         return userPress;
 
     }
-
+// Bug: This can only work once. Exit if you ask it to work twice
     private void runMenu(){
         int userPress = getMenuNumber();
-        if (userPress != 0){
+        while (userPress != 0){
             switch (userPress){
                 case 1 -> addRoom();
                 case 2 -> changeRoomInformation();
@@ -95,7 +95,7 @@ public class Driver {
         System.out.println(store.getEmptyrooms());
     }
 
-    //Enable user to check somebody in//  Doesn't work. It will exit if you press 2
+    //Enable user to check somebody in//
     void changeRoomInformation(){
         System.out.println("rOOM xuhao");
         int i = input.nextInt();
