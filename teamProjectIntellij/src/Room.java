@@ -2,7 +2,7 @@ public class Room {
     private int roomNumber;
     private double roomCost;
     private boolean whetherRoomOcc;
-    //private String customerName;
+    //private String customerName = "Null";
 
 
     Room(int roomNumber,double roomCost,boolean whetherRoomOcc){
@@ -25,5 +25,6 @@ public class Room {
 
     public void checkIn(boolean whetherRoomOcc){
         this.whetherRoomOcc=whetherRoomOcc;
+
     }
 }

@@ -16,7 +16,7 @@ public class Store {
     }
 
     public boolean add(Room room) {
-        if (isFull() == true)
+        if (isFull())
             return false;
         else rooms[total] = room;
         total += 1;
@@ -41,12 +41,12 @@ public class Store {
         if(!isEmpty()){
             Room emptyRoom = rooms[0];
             for(int i = 0;i < total;i++){
-                if(rooms[i].getWhetherRoomOccupied() == false){
+                if(!rooms[i].getWhetherRoomOccupied()){
                     countStr += rooms[i] + "\n";
                 }
             }
         }
-        if(countStr == ""){
+        if(countStr.isEmpty()){
             return "No room available.";
         }
         else {return countStr;}
@@ -57,7 +57,6 @@ public class Store {
     }
 
     public void checkInOut(int i,boolean now){
-        boolean newSituation = now;
-        rooms[i].checkIn(newSituation);
+        rooms[i].checkIn(now);
     }
 }
