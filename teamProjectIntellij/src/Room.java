@@ -27,4 +27,8 @@ public class Room {
         this.whetherRoomOcc=whetherRoomOcc;
 
     }
+
+    public int getRoomNumber(){
+        return roomNumber;
+    }
 }

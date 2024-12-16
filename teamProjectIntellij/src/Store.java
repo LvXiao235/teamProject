@@ -36,7 +36,14 @@ public class Store {
 
     }
 
-    public String getEmptyrooms(){
+    private String listSingleRoom(int i){
+
+        String aRoom = "";
+        aRoom = rooms[i].toString();
+        return aRoom;
+    }
+
+    public String getEmptyRooms(){
         String countStr = "";
         if(!isEmpty()){
             Room emptyRoom = rooms[0];
@@ -59,4 +66,18 @@ public class Store {
     public void checkInOut(int i,boolean now){
         rooms[i].checkIn(now);
     }
+
+    public int getTotal(){
+        return total;
+    }
+
+    public int getRoomNumber2(int i){
+        return rooms[i].getRoomNumber();
+    }
+
+    public String getListSingleProduct(int i){
+        return listSingleRoom(i);
+    }
+
+
 }

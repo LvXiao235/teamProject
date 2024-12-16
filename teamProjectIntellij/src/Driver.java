@@ -96,7 +96,6 @@ public class Driver {
                 System.out.println("Room" + i + "didn't added successfully");
             }
         }
-
     }
 
 
@@ -105,6 +104,7 @@ public class Driver {
         System.out.println(store.getListRooms());
     }
 
+    //Set the highest limitation of array
     private void howManyRooms(){
         System.out.println("How many rooms would you like to have in most?");
         int numberRooms = input.nextInt();
@@ -121,7 +121,7 @@ public class Driver {
 
     void ListEmptyRooms(){
         System.out.println("Looking for empty rooms...");
-        System.out.println(store.getEmptyrooms());
+        System.out.println(store.getEmptyRooms());
     }
 
     //Enable user to check somebody in//
@@ -132,7 +132,17 @@ public class Driver {
          char nowWhether =input.next().charAt(0);
         boolean now = (nowWhether == 'y') || (nowWhether == 'Y');
         store.checkInOut(i,now);
+    }
 
+    //Enable user to get room information by type in room number
+    void SearchRoomNumber(){
+        int roomNumberAim = input.nextInt();
+        int total = store.getTotal();
+        for(int i = 0;i <= total;i++){
+            if(roomNumberAim == store.getRoomNumber2(i)){
+                System.out.println(store.getListSingleProduct(i));
+            }
+        }
     }
 
 
