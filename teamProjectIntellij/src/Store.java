@@ -61,8 +61,8 @@ public class Store {
         return listRooms();
     }
 
-    public void checkInOut(int i,boolean now){
-        rooms[i].checkIn(now);
+    public void checkInOut(int i,boolean now,String customerName){
+        rooms[i].checkIn(now,customerName);
     }
 
     public int getTotal(){
