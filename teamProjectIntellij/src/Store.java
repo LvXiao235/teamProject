@@ -33,12 +33,11 @@ public class Store {
             }
             return list0fRooms;
         }
-
     }
 
     private String listSingleRoom(int i){
 
-        String aRoom = "";
+        String aRoom;
         aRoom = rooms[i].toString();
         return aRoom;
     }
@@ -46,7 +45,6 @@ public class Store {
     public String getEmptyRooms(){
         String countStr = "";
         if(!isEmpty()){
-            Room emptyRoom = rooms[0];
             for(int i = 0;i < total;i++){
                 if(!rooms[i].getWhetherRoomOccupied()){
                     countStr += rooms[i] + "\n";

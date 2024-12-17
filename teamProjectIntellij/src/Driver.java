@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Driver {
@@ -24,7 +25,7 @@ public class Driver {
                 
                 2) Add a new set of rooms\
                 
-                3) Add one new room\
+                3) Add a new room\
                 
                 4) Customer check in/out\
                 
@@ -114,12 +115,12 @@ public class Driver {
 
         store = new Store(numberRooms);
 
-        System.out.println("How many rooms yo want to set now?");
+        /*System.out.println("How many rooms yo want to set now?");
         int roomsCurrentlyAdded = input.nextInt();
 
         for(int i = 0;i < roomsCurrentlyAdded;i++){
           addRoom();
-        }
+        }*/
     }
 
     void ListEmptyRooms(){
@@ -134,11 +135,10 @@ public class Driver {
         int total = store.getTotal();
         for(int i = 0;i < total;i++){
             if(roomNumber == store.getRoomNumber2(i)){
-                int serialNumber = i;
                 System.out.println("Is this room occupied now?");
                 char nowWhether =input.next().charAt(0);
                 boolean now = (nowWhether == 'y') || (nowWhether == 'Y');
-                store.checkInOut(serialNumber,now);
+                store.checkInOut(i,now);
             }
         }
         /*System.out.println("Is this room occupied now");
@@ -159,7 +159,7 @@ public class Driver {
             }
         }
 
-        if(roomSearched != ""){
+        if(!Objects.equals(roomSearched, "")){
             System.out.println(roomSearched);
         }
         else {System.out.println("No information");}
