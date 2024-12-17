@@ -129,12 +129,22 @@ public class Driver {
 
     //Enable user to check somebody in//
     void changeRoomInformation(){
-        System.out.println("rOOM xuhao");
-        int i = input.nextInt();
-        System.out.println("Is this room occupied now");
+        System.out.println("Please enter the room number");
+        int roomNumber = input.nextInt();
+        int total = store.getTotal();
+        for(int i = 0;i < total;i++){
+            if(roomNumber == store.getRoomNumber2(i)){
+                int serialNumber = i;
+                System.out.println("Is this room occupied now?");
+                char nowWhether =input.next().charAt(0);
+                boolean now = (nowWhether == 'y') || (nowWhether == 'Y');
+                store.checkInOut(serialNumber,now);
+            }
+        }
+        /*System.out.println("Is this room occupied now");
          char nowWhether =input.next().charAt(0);
         boolean now = (nowWhether == 'y') || (nowWhether == 'Y');
-        store.checkInOut(i,now);
+        store.checkInOut(,now);*/
     }
 
     //Enable user to get room information by type in room number//Caution: only can be used when array is full

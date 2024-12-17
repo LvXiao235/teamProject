@@ -14,8 +14,8 @@ public class Room {
 
     public String toString(){
         return "Room Number: " + roomNumber
-                + ",room cost(per night): " + roomCost
-                +",Whether the Room is occupied: " + whetherRoomOcc;
+                + ",  room cost(per night): " + roomCost
+                +",  Whether the Room is occupied: " + whetherRoomOcc;
                 //+",test"+customerName;
     }
 

@@ -79,5 +79,9 @@ public class Store {
         return listSingleRoom(i);
     }
 
+    /*public void changeRoomInformation(int i){
+
+    }*/
+
 
 }
