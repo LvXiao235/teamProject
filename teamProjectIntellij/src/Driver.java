@@ -30,7 +30,9 @@ public class Driver {
                 
                 5) Search for empty room\
                 
-                6) Print room information\
+                6) Print all room information\
+                
+                7) Print one room information\
                 
                 0) Exit"""
         );
@@ -48,6 +50,7 @@ public class Driver {
                 case 4 -> changeRoomInformation();
                 case 5 -> ListEmptyRooms();
                 case 6 -> printRooms();
+                case 7 -> SearchRoomNumber();
                 default -> System.out.println("Invalid option entered: " + userPress);
             }
 
@@ -134,15 +137,22 @@ public class Driver {
         store.checkInOut(i,now);
     }
 
-    //Enable user to get room information by type in room number
+    //Enable user to get room information by type in room number//Caution: only can be used when array is full
     void SearchRoomNumber(){
+        System.out.println("Which room do you want to check?");
         int roomNumberAim = input.nextInt();
         int total = store.getTotal();
-        for(int i = 0;i <= total;i++){
+        String roomSearched = "";
+        for(int i = 0;i < total;i++){
             if(roomNumberAim == store.getRoomNumber2(i)){
-                System.out.println(store.getListSingleProduct(i));
+                roomSearched = store.getListSingleProduct(i);
             }
         }
+
+        if(roomSearched != ""){
+            System.out.println(roomSearched);
+        }
+        else {System.out.println("No information");}
     }
 
 
