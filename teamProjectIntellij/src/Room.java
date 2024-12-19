@@ -1,12 +1,14 @@
 public class Room {
     private int roomNumber;
     private double roomCost;
+    private int bedNumber;
     private boolean whetherRoomOcc;
     private String customerName = "Null";
 
 
-    Room(int roomNumber,double roomCost,boolean whetherRoomOcc){
+    Room(int roomNumber,int bedNumber,double roomCost,boolean whetherRoomOcc){
         this.roomNumber = roomNumber;
+        this.bedNumber = bedNumber;
         this.roomCost = roomCost;
         this.whetherRoomOcc = whetherRoomOcc;
 
@@ -14,6 +16,7 @@ public class Room {
 
     public String toString(){
         return "Room Number: " + roomNumber
+                + ", This room has " + roomNumber + " beds"
                 + ",  room cost(per night): " + roomCost
                 +",  Whether the Room is occupied: " + whetherRoomOcc
                 +",  Customer name: "+customerName;
@@ -31,5 +34,9 @@ public class Room {
 
     public int getRoomNumber(){
         return roomNumber;
+    }
+
+    public int getBedNumber(){
+        return bedNumber;
     }
 }

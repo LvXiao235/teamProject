@@ -69,16 +69,18 @@ public class Driver {
     private void addRoom() {
         System.out.println("Enter the room number: ");
         int roomNumber = input.nextInt();
+        System.out.println("How many beds does this room have?");
+        int bedNumber = input.nextInt();
         System.out.println("Enter the room cost (per day): ");
         double roomCost = input.nextDouble();
         /*System.out.println("Is this room occupied?(y/n)");
         char roomOccupied = input.next().charAt(0);
         boolean whetherRoomOcc = (roomOccupied == 'Y') || (roomOccupied == 'y');*/
-        boolean isAdded = store.add(new Room(roomNumber, roomCost, false));
+        boolean isAdded = store.add(new Room(roomNumber,bedNumber, roomCost, false));
         if (isAdded) {
             System.out.println("Room Added Successfully");
         } else {
-            System.out.println("No Product Added");
+            System.out.println("No Room Added");
         }
     }
 
@@ -87,12 +89,14 @@ public class Driver {
         int roomNumber1 = input.nextInt();
         System.out.println("Last room number");
         int roomNumber2 = input.nextInt();
+        System.out.println("Hoe many beds do these rooms have?");
+        int bedNumber = input.nextInt();
         System.out.println("All cost");
         double roomCost = input.nextDouble();
         System.out.println("All rooms not occupied");
 
         for(int i = roomNumber1;i <= roomNumber2;i++){
-            boolean isAdded = store.add(new Room(i,roomCost,false));
+            boolean isAdded = store.add(new Room(i,bedNumber,roomCost,false));
             if (isAdded){
                 System.out.println("Room" + i + " Added Successfully");
             }
@@ -124,8 +128,10 @@ public class Driver {
     }
 
     void ListEmptyRooms(){
+        System.out.println("How many beds?");
+        int bedNumber = input.nextInt();
         System.out.println("Looking for empty rooms...");
-        System.out.println(store.getEmptyRooms());
+        System.out.println(store.getEmptyRooms(bedNumber));
     }
 
     /*void runINorOUT(){

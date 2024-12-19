@@ -42,12 +42,15 @@ public class Store {
         return aRoom;
     }
 
-    public String getEmptyRooms(){
+    public String getEmptyRooms(int bedNumber){
         String countStr = "";
+        //isEmpty means  the array is empty
         if(!isEmpty()){
             for(int i = 0;i < total;i++){
-                if(!rooms[i].getWhetherRoomOccupied()){
-                    countStr += rooms[i] + "\n";
+                if(rooms[1].getBedNumber() == bedNumber) {
+                    if (!rooms[i].getWhetherRoomOccupied()) {
+                        countStr += rooms[i] + "\n";
+                    }
                 }
             }
         }
