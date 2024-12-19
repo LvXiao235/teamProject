@@ -7,8 +7,10 @@ public class Driver {
     private Store store;
 
     public static void main(String[] args) {
+        System.out.println("Tips: you need to initialize the system before using it for the first time.");
        new Driver();
     }
+
 
     public Driver(){
         runMenu();
@@ -55,7 +57,7 @@ public class Driver {
                 default -> System.out.println("Invalid option entered: " + userPress);
             }
 
-            System.out.println("\n Press enter key to continue");
+            System.out.println("\n Press enter key to continue (press twice if it doesn't work sometimes)");
             input.nextLine();
             input.nextLine();
 
@@ -63,16 +65,16 @@ public class Driver {
             userPress = getMenuNumber();
 
         }
-        System.out.println("exit now");
+        System.out.println("Exit now....");
         System.exit(0);
     }
 
     private void addRoom() {
-        System.out.println("Enter the room number(max 5 numbers): ");
+        System.out.println("Enter the room number: ");
         int roomNumber = input.nextInt();
         System.out.println("How many beds does this room have?");
         int bedNumber = input.nextInt();
-        System.out.println("Enter the room cost (per day): ");
+        System.out.println("Enter the room cost (dollar per day): ");
         double roomCost = input.nextDouble();
         boolean isAdded = store.add(new Room(roomNumber,bedNumber, roomCost, false));
         if (isAdded) {
@@ -83,15 +85,16 @@ public class Driver {
     }
 
     private void addRoomsGroup(){
+        System.out.println("A new set of new rooms will be added in order. They should have the same cost and bed numbers.");
         System.out.println("First room number");
         int roomNumber1 = input.nextInt();
         System.out.println("Last room number");
         int roomNumber2 = input.nextInt();
         System.out.println("Hoe many beds do these rooms have?");
         int bedNumber = input.nextInt();
-        System.out.println("All cost");
+        System.out.println("Room cost (dollar per night):");
         double roomCost = input.nextDouble();
-        System.out.println("All rooms not occupied");
+        System.out.println("All rooms are empty by default.");
 
         for(int i = roomNumber1;i <= roomNumber2;i++){
             boolean isAdded = store.add(new Room(i,bedNumber,roomCost,false));
@@ -116,6 +119,7 @@ public class Driver {
         int numberRooms = input.nextInt();
 
         store = new Store(numberRooms);
+        System.out.println("Initialization successful");
 
     }
 
@@ -134,7 +138,7 @@ public class Driver {
         int total = store.getTotal();
         for(int i = 0;i < total;i++){
             if(roomNumber == store.getRoomNumber2(i)){
-                System.out.println("Is the room occupied now?");
+                System.out.println("Check in?");
                 char roomOccupied = input.next().charAt(0);
                 boolean whetherRoomOcc = (roomOccupied == 'Y') || (roomOccupied == 'y');
                 if(whetherRoomOcc){
