@@ -16,7 +16,7 @@ public class Room {
         return "Room Number: " + roomNumber
                 + ",  room cost(per night): " + roomCost
                 +",  Whether the Room is occupied: " + whetherRoomOcc
-                +",  test"+customerName;
+                +",  Customer name: "+customerName;
     }
 
     public boolean getWhetherRoomOccupied() {

@@ -48,7 +48,7 @@ public class Driver {
                 case 1 -> howManyRooms();
                 case 2 -> addRoomsGroup();
                 case 3 -> addRoom();
-                case 4 -> runINorOUT();
+                case 4 -> checkInOut();
                 case 5 -> ListEmptyRooms();
                 case 6 -> printRooms();
                 case 7 -> SearchRoomNumber();
@@ -128,7 +128,7 @@ public class Driver {
         System.out.println(store.getEmptyRooms());
     }
 
-    void runINorOUT(){
+    /*void runINorOUT(){
         int getNumber = INorOUT();
         while (getNumber != 0){
             switch (getNumber){
@@ -142,9 +142,9 @@ public class Driver {
             getNumber = INorOUT();
         }
         System.out.println("go back");
-    }
+    }*/
 
-    int INorOUT(){
+    /*int INorOUT(){
         System.out.println("""
                 
                 Check in or out?\
@@ -153,20 +153,27 @@ public class Driver {
                 
                 2) Check out""");
         return input.nextInt();
-    }
+    }*/
 
     //Enable user to check somebody in//
-    void checkIn(){
+    void checkInOut(){
         System.out.println("Please enter the room number");
         int roomNumber = input.nextInt();
         int total = store.getTotal();
-        //Bug: can't get customer name. Out put is ""
         for(int i = 0;i < total;i++){
             if(roomNumber == store.getRoomNumber2(i)){
+                System.out.println("Is the room occupied now?");
+                char roomOccupied = input.next().charAt(0);
+                boolean whetherRoomOcc = (roomOccupied == 'Y') || (roomOccupied == 'y');
+                if(whetherRoomOcc){
                 System.out.println("Enter customer name");
+                input.nextLine();
                 String customerName = input.nextLine();
                 store.checkInOut(i,true,customerName);
-                break;
+                break;}
+                else{
+                    store.checkInOut(i,false,"Null");
+                }
             }
         }
         /*System.out.println("Is this room occupied now");
@@ -176,7 +183,7 @@ public class Driver {
 
     }
 
-    void check0ut() {
+    /*void check0ut() {
         System.out.println("Please enter the room number");
         int roomNumber = input.nextInt();
         int total = store.getTotal();
@@ -184,15 +191,14 @@ public class Driver {
             if (roomNumber == store.getRoomNumber2(i)) {
                 store.checkInOut(i, false,"Null" );
                 break;
-                //No detected is kept printed
             } else {
-                System.out.println("No room detected");
+                System.out.println("Searching, please wait");
             }
 
         }
-    }
+    }*/
 
-    //Enable user to get room information by type in room number//Caution: only can be used when array is full
+    //Enable user to get room information by type in room number
     void SearchRoomNumber(){
         System.out.println("Which room do you want to check?");
         int roomNumberAim = input.nextInt();
