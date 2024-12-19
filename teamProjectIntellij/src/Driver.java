@@ -59,6 +59,7 @@ public class Driver {
             input.nextLine();
             input.nextLine();
 
+
             userPress = getMenuNumber();
 
         }
@@ -67,15 +68,12 @@ public class Driver {
     }
 
     private void addRoom() {
-        System.out.println("Enter the room number: ");
+        System.out.println("Enter the room number(max 5 numbers): ");
         int roomNumber = input.nextInt();
         System.out.println("How many beds does this room have?");
         int bedNumber = input.nextInt();
         System.out.println("Enter the room cost (per day): ");
         double roomCost = input.nextDouble();
-        /*System.out.println("Is this room occupied?(y/n)");
-        char roomOccupied = input.next().charAt(0);
-        boolean whetherRoomOcc = (roomOccupied == 'Y') || (roomOccupied == 'y');*/
         boolean isAdded = store.add(new Room(roomNumber,bedNumber, roomCost, false));
         if (isAdded) {
             System.out.println("Room Added Successfully");
@@ -119,12 +117,6 @@ public class Driver {
 
         store = new Store(numberRooms);
 
-        /*System.out.println("How many rooms yo want to set now?");
-        int roomsCurrentlyAdded = input.nextInt();
-
-        for(int i = 0;i < roomsCurrentlyAdded;i++){
-          addRoom();
-        }*/
     }
 
     void ListEmptyRooms(){
@@ -134,32 +126,6 @@ public class Driver {
         System.out.println(store.getEmptyRooms(bedNumber));
     }
 
-    /*void runINorOUT(){
-        int getNumber = INorOUT();
-        while (getNumber != 0){
-            switch (getNumber){
-                case 1 -> checkIn();
-                case 2 -> check0ut();
-                default -> System.out.println("Invalid option entered: " + getNumber);
-            }
-            System.out.println("\n Press enter key to continue");
-            input.nextLine();
-            input.nextLine();
-            getNumber = INorOUT();
-        }
-        System.out.println("go back");
-    }*/
-
-    /*int INorOUT(){
-        System.out.println("""
-                
-                Check in or out?\
-                
-                1) Check in\
-                
-                2) Check out""");
-        return input.nextInt();
-    }*/
 
     //Enable user to check somebody in//
     void checkInOut(){
@@ -182,27 +148,7 @@ public class Driver {
                 }
             }
         }
-        /*System.out.println("Is this room occupied now");
-         char nowWhether =input.next().charAt(0);
-        boolean now = (nowWhether == 'y') || (nowWhether == 'Y');
-        store.checkInOut(,now);*/
-
     }
-
-    /*void check0ut() {
-        System.out.println("Please enter the room number");
-        int roomNumber = input.nextInt();
-        int total = store.getTotal();
-        for (int i = 0; i < total; i++) {
-            if (roomNumber == store.getRoomNumber2(i)) {
-                store.checkInOut(i, false,"Null" );
-                break;
-            } else {
-                System.out.println("Searching, please wait");
-            }
-
-        }
-    }*/
 
     //Enable user to get room information by type in room number
     void SearchRoomNumber(){
@@ -221,7 +167,4 @@ public class Driver {
         }
         else {System.out.println("No information");}
     }
-
-
 }
-//Test

@@ -79,10 +79,4 @@ public class Store {
     public String getListSingleProduct(int i){
         return listSingleRoom(i);
     }
-
-    /*public void changeRoomInformation(int i){
-
-    }*/
-
-
 }
