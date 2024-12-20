@@ -1,2 +1,2 @@
 # teamProject
-an application to help one find a room in hotel
+an application designed to help hotel receptionist deal with hotel rooms and customers
