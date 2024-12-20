@@ -8,10 +8,10 @@ public class Driver {
 
     public static void main(String[] args) {
         System.out.println("""
-                Welcome to hotel managing system.\n
                 
-                This system is designed to help you handle the daily work as a hotel receptionist.\n
                 
+                Welcome to hotel managing system.
+                This system is designed to help you handle the daily work as a hotel receptionist.
                 Tips: you need to initialize the system before using it for the first time.""");
        new Driver();
     }
