@@ -107,7 +107,7 @@ public class Driver {
                 System.out.println("Room" + i + " Added Successfully");
             }
             else {
-                System.out.println("Room" + i + "didn't added successfully");
+                System.out.println("Room" + i + "didn't added successfully (more than the number you typed in while initializing)");
             }
         }
     }
@@ -174,6 +174,6 @@ public class Driver {
         if(!Objects.equals(roomSearched, "")){
             System.out.println(roomSearched);
         }
-        else {System.out.println("No information");}
+        else {System.out.println("No information. This room doesn't exist.");}
     }
 }
